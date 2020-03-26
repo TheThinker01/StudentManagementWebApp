@@ -1,6 +1,5 @@
 package HelpingClasses;
 
-import Bean.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;

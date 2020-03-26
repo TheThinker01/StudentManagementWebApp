@@ -11,15 +11,15 @@ public class Student {
     @Id
     @GeneratedValue
     private long s_id;
-    private String name, address, contact,fees,course,password,admission_date;
-
+    private String name, address, contact,course,password,admission_date;
+    private double fees;
     @Column(unique = true,nullable = false)
     private String username;
 
     public Student() {
     }
 
-    public Student(String name, String address, String contact, String username, String fees, String course, String password, String admission_date) {
+    public Student(String name, String address, String contact, String username, double fees, String course, String password, String admission_date) {
         this.name = name;
         this.address = address;
         this.contact = contact;
@@ -70,11 +70,11 @@ public class Student {
         this.username = username;
     }
 
-    public String getFees() {
+    public double getFees() {
         return fees;
     }
 
-    public void setFees(String fees) {
+    public void setFees(double fees) {
         this.fees = fees;
     }
 
