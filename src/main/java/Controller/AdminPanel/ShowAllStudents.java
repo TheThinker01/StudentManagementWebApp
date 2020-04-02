@@ -27,8 +27,19 @@ public class ShowAllStudents extends HttpServlet {
         StudentOperation sts =new StudentOperation();
         String name = req.getParameter("search");
         List res = sts.searchByName(name);
-        ListIterator it = res.listIterator();
-        req.setAttribute("it",it);
+        ListIterator it;
+        String message;
+        if(!res.isEmpty())
+        {   it = res.listIterator();
+            req.setAttribute("it",it);
+            message = "The matching results are";
+        }
+        else
+        {
+            message="No matching records found";
+        }
+        req.setAttribute("message",message);
+
         req.getRequestDispatcher("/WEB-INF/AdminPanel/ShowAllStudents.jsp").forward(req,resp);
     }
 }

@@ -31,6 +31,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="alert-primary mb0"> <h3>${message}</h3> </div>
         <table class="table table-hover ">
             <thead class="thead">
             <tr>
@@ -45,7 +46,7 @@
                 <th scope="col">
                     <form method="post" action="/AdminPanel/showallstudents.do">
                     <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <input type="text" class="form-control" placeholder="Search By Name" name="search">
                         <div class="input-group-append">
                             <button class="btn btn-success" type="submit">Go</button>
                         </div>
