@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Student Registration</title>
+    <%@ include file="../common/commonlinks.jsp"%>
 </head>
 <body>
 <h1>Enter The Details Below To Register</h1>

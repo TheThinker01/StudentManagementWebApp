@@ -8,7 +8,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 
-
 public class SessionFact {
     static SessionFactory sessionFactory;
     public static SessionFactory getSessionFact()
