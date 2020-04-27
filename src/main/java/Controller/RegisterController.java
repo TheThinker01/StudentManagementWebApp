@@ -3,6 +3,7 @@ package Controller;
 import Bean.Student;
 import DAO.StudentDeclaration;
 import DAO.StudentOperation;
+import HelpingClasses.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,7 +30,10 @@ public class RegisterController extends HttpServlet {
         contact = req.getParameter("contact");
         fees = Double.parseDouble(req.getParameter("fees"));
         course = req.getParameter("course");
+
         password = req.getParameter("password");
+        password = BCrypt.hashpw(password,BCrypt.gensalt(12));
+
         admission_date = req.getParameter("admission_date");
         StudentDeclaration so = new StudentOperation();
         so.insertStudent(new Student(name,address,contact,username,fees,course,password,admission_date));

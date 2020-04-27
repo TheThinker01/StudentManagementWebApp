@@ -93,7 +93,7 @@ public class StudentOperation implements StudentDeclaration {
         }
         else {
             Query query = session.createQuery("from Student where name like :searchfield");
-            query.setString("searchfield", name+"%");
+            query.setString("searchfield", "%"+name+"%");
             List lis = query.list();
             return lis;
         }

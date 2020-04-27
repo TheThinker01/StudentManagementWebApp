@@ -17,8 +17,16 @@ public class ShowAllStudents extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StudentOperation sts =new StudentOperation();
         List res  = (sts.selectAllStudents());
-        ListIterator it = res.listIterator();
-        req.setAttribute("it",it);
+        String message;
+        if(res!=null) {
+            ListIterator it = res.listIterator();
+            req.setAttribute("it", it);
+            message = "All the results are";
+        }
+        else{
+            message="No records found";
+        }
+        req.setAttribute("message",message);
         req.getRequestDispatcher("/WEB-INF/AdminPanel/ShowAllStudents.jsp").forward(req,resp);
     }
 
